@@ -53,6 +53,33 @@ Vercel 环境变量：
 
 将 `cowrite-skill/` 复制到 `~/.claude/skills/cowrite/`，在 Claude Code 中使用 `/cowrite` 命令即可读取当天飞书闪念笔记，AI 协助生成内容架构、大纲和分镜。
 
+## 如何获取 API Keys
+
+### Groq API Key
+
+1. 打开 [console.groq.com](https://console.groq.com)，注册/登录
+2. 左侧菜单点 **API Keys**
+3. 点 **Create API Key**，复制保存
+
+Groq 免费额度足够个人使用（Whisper 转录不计入 token 用量限制）。
+
+### 飞书自建应用（App ID / App Secret / Open ID）
+
+1. 打开 [飞书开放平台](https://open.feishu.cn)，登录后点 **创建应用** → 选 **自建应用**
+2. 填写应用名称（如 "Sprout"），创建完成后在 **凭证与基础信息** 页面获取 `App ID` 和 `App Secret`
+3. 左侧菜单 → **权限管理**，搜索并开通以下权限：
+   - `docx:document` — 读写文档
+   - `drive:drive` — 读写云空间
+   - `drive:file` — 读写文件
+   - `drive:permission:member` — 管理文件协作者
+4. 左侧菜单 → **版本管理与发布** → 创建版本并发布（自建应用审核秒过）
+5. 获取你的 **Open ID**：
+   - 左侧菜单 → **API 调试台**
+   - 选一个用户相关 API，如 `GET /contact/v3/users/me`
+   - 点发送，响应里的 `open_id`（格式 `ou_xxxxxxx`）就是你的
+
+> Open ID 跟 App 绑定——同一个人在不同 App 下的 open_id 不一样，要用你自己创建的 App 来查。
+
 ## 工作原理
 
 ```
