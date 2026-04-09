@@ -12,7 +12,7 @@
 set -euo pipefail
 
 # Load .env
-ENV_FILE="/Users/tomin/.gemini/workspace-cowriter/sprouts copy/.env"
+ENV_FILE="/Users/tomin/.gemini/workspace-job-mediastorm/demo-sprout/.env"
 if [[ -f "$ENV_FILE" ]]; then
     export $(grep -v '^#' "$ENV_FILE" | grep -v '^$' | xargs)
 fi
