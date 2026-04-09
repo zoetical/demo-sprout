@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/sprout.js": {
+      "maxDuration": 60
+    }
+  }
+}

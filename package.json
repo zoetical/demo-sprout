@@ -1,0 +1,6 @@
+{
+  "name": "sprout-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Voice memo → Groq Whisper → Feishu doc"
+}
